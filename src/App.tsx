@@ -4,7 +4,7 @@ import Lenis from 'lenis';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, ArrowUpRight } from 'lucide-react';
 import { HeroSequence } from './components/HeroSequence';
-import { Collection } from './components/Collection';
+import { Slideshow } from './components/Slideshow';
 import { Process } from './components/Process';
 import { Commission } from './components/Commission';
 import { FullGallery } from './components/FullGallery';
@@ -83,7 +83,7 @@ function App() {
           <div className="w-px h-16 bg-zinc-800 mx-auto mt-12"></div>
         </section>
 
-        <Collection onOpenGallery={() => setShowGallery(true)} />
+        <Slideshow />
         <Process />
         <Commission onStartCommission={() => setShowCommission(true)} />
         <Reviews />
