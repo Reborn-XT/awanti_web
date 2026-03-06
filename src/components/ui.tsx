@@ -9,12 +9,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = ({ variant = 'primary', children, icon = false, className = '', ...props }: ButtonProps) => {
-    const baseStyles = "px-8 py-4 font-medium tracking-wide transition-all duration-300 flex items-center gap-2 group relative overflow-hidden";
+    const baseStyles = "relative px-8 py-4 text-xs tracking-[0.2em] uppercase font-medium flex items-center gap-2 transition-all duration-300 overflow-hidden group";
 
     const variants = {
-        primary: "bg-zinc-50 text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]",
-        outline: "border border-zinc-700 text-white hover:border-zinc-50 hover:bg-zinc-50/5",
-        ghost: "text-zinc-400 hover:text-white"
+        primary: "bg-white text-black hover:text-white border border-white hover:border-[var(--color-accent)]",
+        outline: "bg-transparent text-white border border-white/30 hover:border-white hover:bg-white/5",
+        ghost: "bg-transparent text-[var(--color-text-muted)] hover:text-white"
     };
 
     return (
@@ -22,9 +22,16 @@ export const Button = ({ variant = 'primary', children, icon = false, className 
             className={`${baseStyles} ${variants[variant]} ${className}`}
             {...props}
         >
+            {/* Sweep fill effect for primary buttons */}
+            {variant === 'primary' && (
+                <span className="absolute inset-0 bg-[var(--color-accent)] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-0" />
+            )}
+            {variant === 'outline' && (
+                <span className="absolute inset-0 bg-white/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left z-0" />
+            )}
             <span className="relative z-10 flex items-center gap-2">
                 {children}
-                {icon && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />}
+                {icon && <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />}
             </span>
         </button>
     );
