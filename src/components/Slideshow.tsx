@@ -126,7 +126,7 @@ export const Slideshow = () => {
                         <img src={nextItem.img} alt="" className="w-1/2 h-full object-cover blur-[100px] -rotate-12 saturate-[2]" />
                     </div>
                 </motion.div>
-                <div className="absolute inset-0 bg-zinc-950/60 backdrop-blur-3xl" />
+                <div className="absolute inset-0 bg-zinc-950/20 backdrop-blur-3xl" />
             </div>
 
             {/* Main Art Container (Diptych Layout) */}
@@ -166,7 +166,7 @@ export const Slideshow = () => {
                                 Sold Out
                             </div>
                         )}
-                        <div className="absolute bottom-0 left-0 right-0 p-8 z-10 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+                        <div className="absolute bottom-0 left-0 right-0 p-8 z-10 bg-gradient-to-t from-black/40 via-transparent to-transparent">
                             <motion.div
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
@@ -201,7 +201,7 @@ export const Slideshow = () => {
                                 Sold Out
                             </div>
                         )}
-                        <div className="absolute bottom-0 left-0 right-0 p-8 z-10 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+                        <div className="absolute bottom-0 left-0 right-0 p-8 z-10 bg-gradient-to-t from-black/40 via-transparent to-transparent">
                             <motion.div
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}

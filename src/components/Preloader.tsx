@@ -76,7 +76,7 @@ export const Preloader = ({ onComplete }: PreloaderProps) => {
                         >
                             <div className="absolute inset-0 bg-white/20 blur-3xl rounded-full scale-125" />
                             <img
-                                src="/awanti-logo.png"
+                                src="/artsy-logo.png"
                                 alt="Awanti Logo"
                                 className="w-56 md:w-80 h-auto object-contain relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                             />

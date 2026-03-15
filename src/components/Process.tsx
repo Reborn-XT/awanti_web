@@ -120,12 +120,12 @@ export const Process = () => {
 
                 {/* The Canvas */}
                 <div className="absolute inset-0 z-0">
-                    <canvas ref={canvasRef} className="w-full h-full opacity-60" />
+                    <canvas ref={canvasRef} className="w-full h-full opacity-90" />
                 </div>
 
                 {/* Overlay Vignettes */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-void)] via-transparent to-[var(--color-void)] pointer-events-none" />
-                <div className="absolute inset-0 bg-black/40 pointer-events-none mix-blend-multiply" />
+                <div className="absolute inset-0 bg-black/10 pointer-events-none mix-blend-multiply" />
 
                 {/* Left side progress indicator */}
                 <div className="absolute left-8 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-center gap-4">
@@ -143,7 +143,7 @@ export const Process = () => {
                                 backgroundColor: useTransform(
                                     scrollYProgress,
                                     [i * 0.33, (i + 0.5) * 0.33],
-                                    ['rgba(255,255,255,0)', 'rgba(192,160,98,0.8)']
+                                    ['rgba(255,255,255,0.1)', 'rgba(255,255,255,1)']
                                 )
                             }}
                         />
@@ -164,7 +164,7 @@ export const Process = () => {
                                 className="absolute inset-0 flex flex-col items-center justify-center text-center"
                             >
                                 {chapter.chapterLabel && (
-                                    <span className="text-xs tracking-[0.3em] text-[var(--color-text-muted)] uppercase block mb-4">
+                                    <span className="text-xs tracking-[0.3em] text-white/60 uppercase block mb-4">
                                         {chapter.chapterLabel}
                                     </span>
                                 )}
@@ -174,15 +174,15 @@ export const Process = () => {
                                     {chapter.number}
                                 </span>
 
-                                <h2 className="text-fluid-h2 font-serif text-[var(--color-text-main)] mb-6 tracking-tight">
+                                <h2 className="text-fluid-h2 font-serif text-white mb-6 tracking-tight drop-shadow-2xl">
                                     {chapter.title}{' '}
-                                    <span className="italic text-[var(--color-text-muted)]">{chapter.titleAccent}</span>
+                                    <span className="italic text-white/70">{chapter.titleAccent}</span>
                                 </h2>
 
                                 {/* Decorative line */}
                                 <div className="w-12 h-px bg-[var(--color-accent)] opacity-30 mb-6" />
 
-                                <p className="text-[var(--color-text-muted)] font-light tracking-wide max-w-md leading-relaxed">
+                                <p className="text-white/80 font-light tracking-wide max-w-md leading-relaxed drop-shadow-lg">
                                     {chapter.description}
                                 </p>
                             </motion.div>

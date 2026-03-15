@@ -16,13 +16,13 @@ export const Commission = ({ onStartCommission }: { onStartCommission?: () => vo
     return (
         <div ref={sectionRef} className="flex flex-col md:flex-row min-h-screen bg-[var(--color-void)] text-[var(--color-text-main)] border-t border-white/5">
             {/* Left Static Visual - Editorial Image */}
-            <div className="w-full md:w-1/2 h-[50vh] md:h-screen sticky top-0 overflow-hidden bg-black group grayscale hover:grayscale-0 transition-all duration-1000 cursor-hover">
+            <div className="w-full md:w-1/2 h-[50vh] md:h-screen sticky top-0 overflow-hidden bg-black group transition-all duration-1000 cursor-hover">
                 <img
                     src="/ghibli-example.jpg"
                     alt="Custom Ghibli Style Art"
-                    className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-[2000ms]"
+                    className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[2000ms]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-void)] via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-void)] via-transparent to-transparent opacity-40" />
 
                 {/* Floating info card on hover */}
                 <motion.div
