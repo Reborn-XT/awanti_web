@@ -100,8 +100,8 @@ export const HeroSequence = () => {
     // 2. Gets dimmer (brightness filter)
     // 3. Pushes back (visual depth)
     const scaleContainer = useTransform(scrollYProgress, [0.85, 1], [1, 0.95]);
-    const opacityContainer = useTransform(scrollYProgress, [0.85, 1], [1, 0.5]);
-    const filterContainer = useTransform(scrollYProgress, [0.85, 1], ["brightness(1)", "brightness(0.4)"]);
+    const opacityContainer = useTransform(scrollYProgress, [0.85, 1], [1, 0.9]);
+    const filterContainer = useTransform(scrollYProgress, [0.85, 1], ["brightness(1)", "brightness(0.85)"]);
     const radiusContainer = useTransform(scrollYProgress, [0.85, 1], ["0px", "20px"]);
 
     return (
@@ -122,12 +122,12 @@ export const HeroSequence = () => {
                 >
                     <canvas ref={canvasRef} className="absolute inset-0 w-full h-full object-cover opacity-100" />
 
-                    {/* Light Vignette for depth on white background */}
+                    {/* Light Vignette for depth */}
                     <motion.div
-                        style={{ opacity: useTransform(scrollYProgress, [0, 0.5, 0.9], [0.1, 0.2, 0.3]) }}
+                        style={{ opacity: useTransform(scrollYProgress, [0, 0.5, 0.9], [0.2, 0.3, 0.4]) }}
                         className="absolute inset-0 pointer-events-none"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
                     </motion.div>
 
                     {/* Hero Text - Changed back to Black for the clean aesthetic */}
@@ -158,7 +158,7 @@ export const HeroSequence = () => {
                                 >
                                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-full bg-white/40 blur-[50px] rounded-[100%] pointer-events-none" />
                                     <img
-                                        src="/awanti-logo.png"
+                                        src="/artsy-logo.png"
                                         alt="Awanti Logo"
                                         className="h-40 md:h-56 w-auto object-contain relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]"
                                     />
@@ -181,6 +181,7 @@ export const HeroSequence = () => {
                                         </motion.span>
                                     ))}
                                 </h1>
+                                <div className="absolute inset-0 bg-black/10 blur-xl scale-110 pointer-events-none -z-10" />
                             </motion.div>
 
                             <motion.p

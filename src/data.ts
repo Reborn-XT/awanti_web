@@ -11,9 +11,9 @@ export type Product = {
 
 export const INVENTORY: Product[] = [
     { id: 1, title: "Serene Nature", price: 249, size: "4x4", cat: "Mini", status: "Available", img: "/products/Serene Nature Art.jpg" },
-    { id: 2, title: "Sunset Silhouette", price: 299, size: "4x4", cat: "Mini", status: "Available", img: "/products/Sunset Silhouette Art.jpg" },
-    { id: 3, title: "Twilight Landscape", price: 299, size: "4x4", cat: "Mini", status: "Available", img: "/products/Twilight Landscape Art.jpg" },
-    { id: 4, title: "Panda & Bamboo", price: 399, size: "4x4", cat: "Cute", status: "Available", img: "/products/Cute  Animal Art.jpg" },
+    { id: 2, title: "Sunset Silhouette", price: 299, size: "4x4", cat: "Mini", status: "Sold Out", img: "/products/Sunset Silhouette Art.jpg" },
+    { id: 3, title: "Twilight Landscape", price: 299, size: "4x4", cat: "Mini", status: "Sold Out", img: "/products/Twilight Landscape Art.jpg" },
+    { id: 4, title: "Panda & Bamboo", price: 450, size: "4x4", cat: "Cute", status: "Sold Out", img: "/products/Cute  Animal Art.jpg" },
     { id: 5, title: "Urban Cityscape", price: 449, size: "4x4", cat: "Mini", status: "Available", img: "/products/Cityscape.jpg" },
     { id: 6, title: "Magical World", price: 349, size: "4x4", cat: "Fantasy", status: "Sold Out", img: "/products/Magical world Art.jpg" },
     { id: 7, title: "Flamingo Queen", price: 799, size: "8x8", cat: "Statement", status: "Available", img: "/products/Flamingo Queen.jpg" },

@@ -8,7 +8,6 @@ import { Process } from './components/Process';
 import { Commission } from './components/Commission';
 import { FullGallery } from './components/FullGallery';
 import { ShoppingBag } from 'lucide-react';
-import { CommissionModal } from './components/CommissionModal';
 import { CustomCursor } from './components/CustomCursor';
 import { Preloader } from './components/Preloader';
 import { Marquee } from './components/Marquee';
@@ -17,12 +16,12 @@ import { AmbientParticles } from './components/AmbientParticles';
 
 function App() {
   const [showGallery, setShowGallery] = useState(false);
-  const [showCommission, setShowCommission] = useState(false);
   const [loading, setLoading] = useState(true);
 
   // Refs for in-view animations
   const prologueRef = useRef(null);
   const footerRef = useRef(null);
+  const INSTAGRAM_URL = "https://www.instagram.com/artsyauraa_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
   const prologueInView = useInView(prologueRef, { once: true, margin: "-100px" });
   const footerInView = useInView(footerRef, { once: true, margin: "-100px" });
 
@@ -88,13 +87,13 @@ function App() {
         >
           {/* Ambient white glow to make black text visible on dark backgrounds */}
           <div className="absolute inset-0 bg-white/30 blur-2xl rounded-full scale-110 pointer-events-none" />
-          <img src="/awanti-logo.png" alt="Awanti Logo" className="h-20 md:h-32 w-auto object-contain relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
+          <img src="/artsy-logo.png" alt="Awanti Logo" className="h-20 md:h-32 w-auto object-contain relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
         </motion.a>
 
         <div className="flex items-center gap-8 mix-blend-difference text-white pointer-events-auto pt-4 md:pt-0">
           <button onClick={() => setShowGallery(true)} className="nav-link text-sm font-medium tracking-wide hover:text-zinc-300 transition-colors">GALLERY</button>
           <button className="nav-link hidden md:block text-sm font-medium tracking-wide hover:text-zinc-300 transition-colors">PROCESS</button>
-          <button onClick={() => setShowCommission(true)} className="nav-link hidden md:block text-sm font-medium tracking-wide hover:text-zinc-300 transition-colors">COMMISSION</button>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="nav-link hidden md:block text-sm font-medium tracking-wide hover:text-zinc-300 transition-colors">COMMISSION</a>
           <motion.div
             className="relative cursor-pointer group"
             whileHover={{ scale: 1.15, rotate: -5 }}
@@ -181,9 +180,8 @@ function App() {
         {/* Testimonials */}
         <Reviews />
 
-        <Commission onStartCommission={() => setShowCommission(true)} />
+        <Commission onStartCommission={() => window.open(INSTAGRAM_URL, '_blank')} />
         <FullGallery isOpen={showGallery} onClose={() => setShowGallery(false)} />
-        <CommissionModal isOpen={showCommission} onClose={() => setShowCommission(false)} />
       </main>
 
       {/* Footer with Stagger Animation */}
@@ -199,8 +197,8 @@ function App() {
             className="flex flex-col items-center select-none pointer-events-none text-white relative"
           >
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-white/20 blur-[60px] rounded-[100%] pointer-events-none" />
-            <img src="/awanti-logo.png" alt="Awanti Logo" className="w-[45vw] max-w-[500px] mb-8 object-contain relative z-10 drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]" />
-            <span className="text-[4vw] font-serif leading-none text-zinc-600 relative z-10">AWANTI</span>
+            <img src="/artsy-logo.png" alt="Awanti Logo" className="w-[45vw] max-w-[500px] mb-8 object-contain relative z-10 drop-shadow-[0_0_25px_rgba(255,255,255,0.2)]" />
+            <span className="text-[4vw] font-serif leading-none text-zinc-600 relative z-10 uppercase tracking-widest">AWANTI</span>
           </motion.div>
 
           <motion.div
@@ -209,7 +207,7 @@ function App() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="mt-12 flex gap-8 text-sm font-medium tracking-widest uppercase"
           >
-            <a href="#" className="footer-link">Instagram</a>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="footer-link">Instagram</a>
             <a href="#" className="footer-link">Twitter</a>
             <a href="#" className="footer-link">Email</a>
           </motion.div>
